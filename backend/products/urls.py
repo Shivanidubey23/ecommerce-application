@@ -1,26 +1,14 @@
-# Product url file 
+#Custom url names
 from django.urls import path
-from .views import (
-    ProductListView, 
-    ProductCreateView,
-    ProductRetrieveView,
-    ProductUpdateView,
-    ProductDeleteView
-)
+from .views import ProductListCreateView, ProductRetrieveUpdateDestroyView
 
 urlpatterns = [
-    # List all products
-    path('product/get/', ProductListView.as_view(), name='product-list'),
+    # List all products AND create new product
+    path('product/get/', ProductListCreateView.as_view(), {'http_method_names': ['get']}, name='product-list'),
+    path('product/add/', ProductListCreateView.as_view(), {'http_method_names': ['post']}, name='product-add'),
     
-    # Add new product
-    path('product/add/', ProductCreateView.as_view(), name='product-add'),
-    
-    # Get specific product
-    path('product/get/<int:pk>/', ProductRetrieveView.as_view(), name='product-detail'),
-    
-    # Edit product
-    path('product/edit/<int:pk>/', ProductUpdateView.as_view(), name='product-edit'),
-    
-    # Delete product
-    path('product/delete/<int:pk>/', ProductDeleteView.as_view(), name='product-delete'),
+    # Get, edit, and delete specific product
+    path('product/get/<int:pk>/', ProductRetrieveUpdateDestroyView.as_view(), {'http_method_names': ['get']}, name='product-detail'),
+    path('product/edit/<int:pk>/', ProductRetrieveUpdateDestroyView.as_view(), {'http_method_names': ['put', 'patch']}, name='product-edit'),
+    path('product/delete/<int:pk>/', ProductRetrieveUpdateDestroyView.as_view(), {'http_method_names': ['delete']}, name='product-delete'),
 ]

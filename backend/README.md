@@ -13,14 +13,15 @@ A simple Django REST API for managing products with CRUD operations.
 
 ## API Endpoints
 
+### Products
 | Method | Endpoint | Description |
 |--------|----------|-------------|
-| GET | `/api/products/` | List all products |
-| POST | `/api/products/` | Create a new product |
-| GET | `/api/products/{id}/` | Get a specific product |
-| PUT | `/api/products/{id}/` | Update a product (full) |
-| PATCH | `/api/products/{id}/` | Update a product (partial) |
-| DELETE | `/api/products/{id}/` | Delete a product |
+| GET | `/product/get/` | List all products |
+| POST | `/product/add/` | Create new product |
+| GET | `/product/get/{id}/` | Get product by ID |
+| PUT | `/product/edit/{id}/` | Update product |
+| DELETE | `/product/delete/{id}/` | Delete product |
+
 
 ## Quick Start
 
