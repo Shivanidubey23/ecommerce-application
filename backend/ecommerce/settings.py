@@ -123,7 +123,7 @@ REST_FRAMEWORK = {
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
-    "https://ecommerce-frontend.vercel.app",  # Update this with actual frontend URL
+    "https://ecommerce-application-4mm4.onrender.com"
 ]
 
 CORS_ALLOW_ALL_ORIGINS = DEBUG  # Only allow all origins in development
