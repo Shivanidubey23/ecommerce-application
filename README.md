@@ -134,9 +134,3 @@ npm test
 2. Make changes in respective `backend/` or `frontend/` directory
 3. Test your changes
 4. Create pull request with clear description
-
-## 📞 Contact
-
-- Backend Issues: Tag `@backend-dev`
-- Frontend Issues: Tag `@frontend-dev`
-- General Questions: Create GitHub issue
